@@ -80,6 +80,8 @@ func run(cmd *cobra.Command, args []string) error {
 		return errors.New(errb.String())
 	}
 
+	fmt.Println("Congrats! Your Tiller in the " + namespace + " namespace is secured with the " + profileName + " service account\nYou can verify your Tiller config by running this command\n\t$ kubectl -n " + namespace + " get deployment tiller-deploy -o json\n")
+
 	//TODO: verify that the service account you wanted is now part of the tiller deployment spec
 
 	return nil
