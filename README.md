@@ -25,4 +25,4 @@ You can verify your Tiller config by running this command
 
 ```
 
-You should now have a Tiller in the `dev-team` namespace that is only allowed to do the things specified in `examples/dev-team-rbac-profile/role/role-tiller.yaml`
+You should now have a Tiller in the `dev-team` namespace that is only allowed to do the things specified in `examples/dev-team-rbac-profile/role-tiller.yaml`
