@@ -15,6 +15,13 @@ $ helm init --tiller-namespace dev-team
 
 # creates service account, role, and rolebinding needed and attaches service account to tiller
 $ ./secure-tiller examples/dev-team-rbac-profile/ --namespace dev-team
+serviceaccount "dev-team-rbac-profile" created
+rolebinding "dev-team-tiller-binding" created
+role "dev-team" created
+
+Congrats! Your Tiller in the dev-team namespace is secured with the dev-team-rbac-profile service account
+You can verify your Tiller config by running this command
+	$ kubectl -n dev-team get deployment tiller-deploy -o json
 
 ```
 
