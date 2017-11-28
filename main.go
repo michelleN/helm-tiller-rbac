@@ -20,7 +20,7 @@ Example Usage:
 `
 
 var namespace string
-var version = "0.0.1-dev"
+var version = "DEV"
 
 func main() {
 	cmd := &cobra.Command{
