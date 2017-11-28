@@ -8,6 +8,11 @@ PROJECT_GH="michelleN/$PROJECT_NAME"
 
 : ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-secure-tiller"}
 
+if [[ $SKIP_BIN_INSTALL == "1" ]]; then
+  echo "Skipping binary install"
+  exit
+fi
+
 # initArch discovers the architecture for this system.
 initArch() {
   ARCH=$(uname -m)
