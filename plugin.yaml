@@ -1,0 +1,8 @@
+name: "secure-tiller"
+version: "0.1.0"
+usage: "Secure Tiller with an RBAC profile"
+description: |-
+  This plugin allows you to configure Tiller with an RBAC profile.
+ignoreFlags: true
+useTunnel: false
+command: "$HELM_PLUGIN_DIR/install-binary.sh"
