@@ -4,6 +4,7 @@
 # thank you!
 
 PROJECT_NAME="helm-secure-tiller"
+BIN_NAME="secure-tiller"
 PROJECT_GH="michelleN/$PROJECT_NAME"
 
 : ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-secure-tiller"}
@@ -85,7 +86,7 @@ installFile() {
   HELM_TMP="/tmp/$PROJECT_NAME"
   mkdir -p "$HELM_TMP"
   tar xf "$PLUGIN_TMP_FILE" -C "$HELM_TMP"
-  HELM_TMP_BIN="$HELM_TMP/secure-tiller"
+  HELM_TMP_BIN="$HELM_TMP/$BIN_NAME"
   echo "Preparing to install into ${HELM_PLUGIN_PATH}"
   cp "$HELM_TMP_BIN" "$HELM_PLUGIN_PATH"
 }
@@ -107,7 +108,7 @@ testVersion() {
   # To avoid to keep track of the Windows suffix,
   # call the plugin assuming it is in the PATH
   PATH=$PATH:$HELM_PLUGIN_PATH
-  secure-tiller -h
+  $BIN_NAME -h
   set -e
 }
 
