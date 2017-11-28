@@ -30,7 +30,7 @@ func main() {
 	}
 
 	f := cmd.Flags()
-	f.StringVar(&namespace, "namespace", "default", "namespace to create service account")
+	f.StringVar(&namespace, "namespace", "default", "namespace of Tiller")
 
 	if err := cmd.Execute(); err != nil {
 		os.Exit(1)
