@@ -22,7 +22,7 @@ build:
 dist:
 	mkdir -p $(DIST)
 	GOOS=linux GOARCH=amd64 go build -o $(PLUGIN_BINARY) -ldflags $(LDFLAGS) ./main.go
-	tar -zcvf $(DIST)/$(PLUGIN_REPO)-tiller-linux-$(VERSION).tgz $(PLUGIN_BINARY) README.md LICENSE.txt plugin.yaml
+	tar -zcvf $(DIST)/$(PLUGIN_REPO)-linux-$(VERSION).tgz $(PLUGIN_BINARY) README.md LICENSE.txt plugin.yaml
 	GOOS=darwin GOARCH=amd64 go build -o $(PLUGIN_BINARY) -ldflags $(LDFLAGS) ./main.go
 	tar -zcvf $(DIST)/$(PLUGIN_REPO)-macos-$(VERSION).tgz $(PLUGIN_BINARY) README.md LICENSE.txt plugin.yaml
 	GOOS=windows GOARCH=amd64 go build -o $(PLUGIN_BINARY).exe -ldflags $(LDFLAGS) ./main.go
