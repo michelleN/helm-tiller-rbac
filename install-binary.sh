@@ -3,7 +3,7 @@
 # credit: this is a copy/paste of the install-binary.sh file from the helm-template plugin
 # thank you!
 
-PROJECT_NAME="secure-tiller"
+PROJECT_NAME="helm-secure-tiller"
 PROJECT_GH="michelleN/$PROJECT_NAME"
 
 : ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-secure-tiller"}
@@ -85,7 +85,7 @@ installFile() {
   HELM_TMP="/tmp/$PROJECT_NAME"
   mkdir -p "$HELM_TMP"
   tar xf "$PLUGIN_TMP_FILE" -C "$HELM_TMP"
-  HELM_TMP_BIN="$HELM_TMP/tpl"
+  HELM_TMP_BIN="$HELM_TMP/secure-tiller"
   echo "Preparing to install into ${HELM_PLUGIN_PATH}"
   cp "$HELM_TMP_BIN" "$HELM_PLUGIN_PATH"
 }
@@ -107,7 +107,7 @@ testVersion() {
   # To avoid to keep track of the Windows suffix,
   # call the plugin assuming it is in the PATH
   PATH=$PATH:$HELM_PLUGIN_PATH
-  tpl -h
+  secure-tiller -h
   set -e
 }
 
