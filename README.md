@@ -9,7 +9,7 @@ $ helm secure-tiller [flags] RBAC_PROFILE
 
 ### Flags
 ```
-     --namespace string   namespace of Tiller to apply profile (default "default")
+ --namespace string   namespace of Tiller to apply profile (default "default")
 ```
 
 ## Install
@@ -24,18 +24,13 @@ If you would like to handle the build yourself, instead of fetching a binary, th
 
 First, set up your environment:
 
-You need to have Go installed. Make sure to set $GOPATH
-If you don't have Glide installed, this will install it into $GOPATH/bin for you.
-Clone this repo into your $GOPATH using git.
+ - You need to have [Go](https://golang.org/) installed. Make sure to set `$GOPATH`
+ - If you don't have [Glide](http://glide.sh/) installed, the instructions below will install it into `$GOPATH/bin` for you.
 
-```console
-cd $GOPATH/src/github.com/michelleN # mkdir as needed
-git clone https://github.com/michelleN/helm-secure-tiller
-```
-Then run the following to get running.
+Clone this repo into your `$GOPATH` using git. You can use the command `You can use go get -d github.com/michelleN/helm-secure-tiller` for that.
 
 ```
-$ cd helm-secure-tiller
+$ cd $GOPATH/src/github.com/michelleN/helm-secure-tiller
 $ make bootstrap build
 $ SKIP_BIN_INSTALL=1 helm plugin install $GOPATH/src/github.com/michelleN/helm-secure-tiller
 ```
