@@ -78,8 +78,6 @@ func run(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	// TODO: save manifests in a temp file
-
 	outb.Reset()
 	errb.Reset()
 	createSvcAccount := exec.Command("kubectl", "create", "serviceaccount", profileName, "--namespace", namespace)
