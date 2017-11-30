@@ -1,12 +1,12 @@
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: "{{.Values.team}}-tiller-binding"
+  name: "tiller-binding-{{.Values.team}}"
   namespace: "{{.Release.Namespace}}"
 subjects:
 - kind: ServiceAccount
   name: "tiller-{{.Values.team}}"
-  namespace: {{.Values.Namespace}}
+  namespace: "{{.Release.Namespace}}"
 roleRef:
   kind: Role
   name: dev-team
