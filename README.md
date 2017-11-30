@@ -37,7 +37,7 @@ Then run the following to get running.
 ```
 $ cd helm-secure-tiller
 $ make bootstrap build
-$ SKIP_BIN_INSTALL=1 helm plugin install $GOPATH/src/github.com/technosophos/helm-template
+$ SKIP_BIN_INSTALL=1 helm plugin install $GOPATH/src/github.com/michelleN/helm-secure-tiller
 ```
 That last command will skip fetching the binary install and use the one you built.
 
