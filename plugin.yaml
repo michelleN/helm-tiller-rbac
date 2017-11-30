@@ -5,4 +5,6 @@ description: |-
   This plugin allows you to configure Tiller with an RBAC profile.
 ignoreFlags: true
 useTunnel: false
-command: "$HELM_PLUGIN_DIR/install-binary.sh"
+command: "$HELM_PLUGIN_DIR/secure-tiller"
+hooks:
+  install: "$HELM_PLUGIN_DIR/install-binary.sh"
