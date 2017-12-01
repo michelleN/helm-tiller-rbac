@@ -26,7 +26,7 @@ var version = "DEV"
 
 func main() {
 	cmd := &cobra.Command{
-		Use:   "secure-tiller [RBAC_PROFILE_PATH]",
+		Use:   "secure-tiller [RBAC_PROFILE]",
 		Short: globalUsage,
 		RunE:  run,
 	}
