@@ -1,5 +1,5 @@
 name: "secure-tiller"
-version: "0.2.0"
+version: "0.4.0"
 usage: "Secure Tiller with an RBAC profile"
 description: |-
   This plugin allows you to configure Tiller with an RBAC profile.
