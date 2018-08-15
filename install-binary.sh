@@ -3,11 +3,11 @@
 # credit: this is a copy/paste of the install-binary.sh file from the helm-template plugin
 # thank you!
 
-PROJECT_NAME="helm-secure-tiller"
-BIN_NAME="secure-tiller"
+PROJECT_NAME="helm-tiller-rbac"
+BIN_NAME="tiller-rbac"
 PROJECT_GH="michelleN/$PROJECT_NAME"
 
-: ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-secure-tiller"}
+: ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-tiller-rbac"}
 
 if [[ $SKIP_BIN_INSTALL == "1" ]]; then
   echo "Skipping binary install"
@@ -96,7 +96,7 @@ fail_trap() {
   result=$?
   if [ "$result" != "0" ]; then
     echo "Failed to install $PROJECT_NAME"
-    echo "\tFor support, go to https://github.com/michelleN/helm-secure-tiller."
+    echo "\tFor support, go to https://github.com/michelleN/helm-tiller-rbac."
   fi
   exit $result
 }
