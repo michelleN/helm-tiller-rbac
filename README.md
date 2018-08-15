@@ -1,10 +1,10 @@
-# Helm Secure-Tiller Plugin
+# The Tiller-RBAC Plugin
 This Helm plugin allows you to add an RBAC profile to a Tiller in a Kubernetes namespace. An **RBAC Profile** is a Helm chart that consists of a Kubernetes Role and RoleBinding definition. This plugin is designed to help the team of operators that set up multiple Tillers in their cluster (one Tiller per namespace) ensure that a Tiller is locked down to specific actions on specific Kubernetes resources in a given namespace.
 
 
 ## Usage
 ```console
-$ helm secure-tiller [flags] RBAC_PROFILE
+$ helm tiller-rbac [flags] RBAC_PROFILE
 ```
 
 ### Flags
@@ -14,9 +14,9 @@ $ helm secure-tiller [flags] RBAC_PROFILE
 
 ## Install
 ```console
-$ helm plugin install https://github.com/michelleN/helm-secure-tiller
+$ helm plugin install https://github.com/michelleN/helm-tiller-rbac
 ```
-The above will fetch the latest binary release of `helm secure-tiller` and install it.
+The above will fetch the latest binary release of `helm tiller-rbac` and install it.
 
 ### Developer (From Source) Install
 
@@ -27,12 +27,12 @@ First, set up your environment:
  - You need to have [Go](https://golang.org/) installed. Make sure to set `$GOPATH`
  - If you don't have [Glide](http://glide.sh/) installed, the instructions below will install it into `$GOPATH/bin` for you.
 
-Clone this repo into your `$GOPATH` using git. You can use the command `You can use go get -d github.com/michelleN/helm-secure-tiller` for that.
+Clone this repo into your `$GOPATH` using git. You can use the command `You can use go get -d github.com/michelleN/helm-tiller-rbac` for that.
 
 ```
-$ cd $GOPATH/src/github.com/michelleN/helm-secure-tiller
+$ cd $GOPATH/src/github.com/michelleN/helm-tiller-rbac
 $ make bootstrap build
-$ SKIP_BIN_INSTALL=1 helm plugin install $GOPATH/src/github.com/michelleN/helm-secure-tiller
+$ SKIP_BIN_INSTALL=1 helm plugin install $GOPATH/src/github.com/michelleN/helm-tiller-rbac
 ```
 That last command will skip fetching the binary install and use the one you built.
 
@@ -45,9 +45,9 @@ $ kubectl create namespace dev-team
 $ helm init --tiller-namespace dev-team
 ```
 
-Then, use the secure-tiller plugin to apply the example dev-team RBAC profile in this repo.
+Then, use the tiller-rbac plugin to apply the example dev-team RBAC profile in this repo.
 ```console
-$ helm secure-tiller --namespace dev-team example-profiles/dev-team/
+$ helm tiller-rbac --namespace dev-team example-profiles/dev-team/
 serviceaccount "dev-team-rbac-profile" created
 rolebinding "dev-team-tiller-binding" created
 role "dev-team" created
