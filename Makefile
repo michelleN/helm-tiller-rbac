@@ -2,9 +2,9 @@
 SHELL=/bin/bash
 
 HELM_HOME ?= $(shell helm home)
-HELM_PLUGIN_DIR ?= $(HELM_HOME)/plugins/helm-secure-tiller
-PLUGIN_REPO ?= helm-secure-tiller
-PLUGIN_BINARY ?= secure-tiller
+HELM_PLUGIN_DIR ?= $(HELM_HOME)/plugins/helm-tiller-rbac
+PLUGIN_REPO ?= helm-tiller-rbac
+PLUGIN_BINARY ?= tiller-rbac
 HAS_DEP := $(shell command -v glide;)
 VERSION := $(shell sed -n -e 's/version:[ "]*\([^"]*\).*/\1/p' plugin.yaml)
 DIST := $(CURDIR)/_dist
@@ -12,11 +12,11 @@ LDFLAGS := "-X main.version=${VERSION}"
 
 .PHONY: install
 install: bootstrap build
-	helm plugin install $(GOPATH)/src/github.com/michelleN/helm-secure-tiller
+	helm plugin install $(GOPATH)/src/github.com/michelleN/helm-tiller-rbac
 
 .PHONY: build
 build:
-	go build -o secure-tiller -ldflags $(LDFLAGS) ./main.go
+	go build -o tiller-rbac -ldflags $(LDFLAGS) ./main.go
 
 .PHONY: dist
 dist:

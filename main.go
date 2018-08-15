@@ -18,7 +18,7 @@ Enable an RBAC profile for Tiller
 An RBAC profile at the moment is a Helm chart that contains a set of Kubernetes manifests defining roles, role-bindings, service accounts that can be templated
 
 Example Usage: 
-   $ helm secure-tiller dev-team-rbac-profile-chart/
+   $ helm tiller-rbac dev-team-rbac-profile-chart/
 `
 
 var namespace string
@@ -26,7 +26,7 @@ var version = "DEV"
 
 func main() {
 	cmd := &cobra.Command{
-		Use:   "secure-tiller [RBAC_PROFILE]",
+		Use:   "tiller-rbac [RBAC_PROFILE]",
 		Short: globalUsage,
 		RunE:  run,
 	}
@@ -67,7 +67,7 @@ func run(cmd *cobra.Command, args []string) error {
 	}
 	manifests := []byte(outb.String())
 
-	dir, err := ioutil.TempDir("", "secure-tiller")
+	dir, err := ioutil.TempDir("", "tiller-rbac")
 	if err != nil {
 		return err
 	}

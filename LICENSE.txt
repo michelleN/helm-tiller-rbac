@@ -1,4 +1,4 @@
-Helm Secure-Tiller Plugin
+Helm Tiller-RBAC Plugin
 Copyright (C) 2017, Michelle Noorali
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
