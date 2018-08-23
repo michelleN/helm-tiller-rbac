@@ -1,6 +1,6 @@
 name: "tiller-rbac"
-version: "0.5.0"
-usage: "Secure Tiller with an RBAC profile"
+version: "0.6.0"
+usage: "Add RBAC profiles to Tiller"
 description: |-
   This plugin allows you to configure Tiller with an RBAC profile.
 ignoreFlags: false
