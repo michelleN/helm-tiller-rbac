@@ -58,3 +58,12 @@ You can verify your Tiller config by running this command
 ```
 
 You should now have a Tiller in the `dev-team` namespace that is only allowed to do the things specified in `example-profiles/dev-team/templates/role-tiller.yaml`
+
+
+## Contributing
+Contribute to this project by opening up a pull request. Be sure to sign your commits, as this project uses the [DCO](https://developercertificate.org/). You can sign your commits by adding the `-s` flag to your commit.
+
+### Example
+```console
+$ git commit -s -m "just signing my cute commits. <info emoji>"
+```
